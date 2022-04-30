@@ -6,7 +6,6 @@ formSearch.addEventListener('submit', e => {
     e.preventDefault()
 
     const searchFormData = new FormData(e.target)
-    console.log(searchFormData.get("name"))
     search(searchFormData);
 })
 
@@ -21,7 +20,6 @@ async function search(searchFormData) {
     };
     const response = await fetch(baseUrl + countryName, settings)
         .then(response => {
-            console.log(response)
             return response.json()
         })
         .then(data => {
